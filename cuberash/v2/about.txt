@@ -1,0 +1,17 @@
+Note : Use fullscreen mode to see scores.
+
+
+Newly added features :
+	Score
+	Highscore
+Bug fixes :
+	Fixed red cubes slipping from the edges.
+
+Removed :
+	Touch control
+
+Minor Updates :
+	spacebar acts as restart instead of 'R'
+	player won't fall from edges.
+	
+		
