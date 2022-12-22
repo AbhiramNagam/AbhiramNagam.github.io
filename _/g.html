@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>!</title>
+</head>
+<body>
+<script>
+    var txt="\n" +
+        "package final_m2_2;\n" +
+        "import java.util.HashMap;\n" +
+        "import java.util.Scanner;\n" +
+        "\n" +
+        "public class Main {\n" +
+        "    public static void main(String[] args){\n" +
+        "        Scanner sc=new Scanner(System.in);\n" +
+        "        System.out.print(\"Enter a string : \");\n" +
+        "\n" +
+        "//        String s= \"Java is an object-oriented programming language is \";\n" +
+        "        String s= sc.nextLine();\n" +
+        "        String[] arr=s.split(\" \");\n" +
+        "        HashMap <String,Integer> mp = new HashMap<>();\n" +
+        "        for(String i : arr){\n" +
+        "            if(mp.containsKey(i)){\n" +
+        "                int var=mp.get(i);\n" +
+        "                var++;\n" +
+        "                mp.put(i,var);\n" +
+        "            }\n" +
+        "            else{\n" +
+        "                mp.put(i,1);\n" +
+        "            }\n" +
+        "        }\n" +
+        "        \n" +
+        "        for(String i: mp.keySet()){\n" +
+        "            System.out.println(i+\" : \"+mp.get(i));\n" +
+        "        }\n" +
+        "    }\n" +
+        "}";
+    navigator.clipboard.writeText(txt);
+</script>
+</body>
+</html>
