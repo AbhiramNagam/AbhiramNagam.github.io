@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>!</title>
+</head>
+<body>
+<script>
+  var txt="package hi;\n" +
+          "import java.awt.FlowLayout;\n" +
+          "import java.awt.event.FocusEvent;\n" +
+          "import java.awt.event.FocusListener;\n" +
+          "\n" +
+          "import javax.swing.JFrame;\n" +
+          "import javax.swing.JLabel;\n" +
+          "import javax.swing.JTextField;\n" +
+          "\n" +
+          "public class Main extends JFrame implements FocusListener {\n" +
+          "    JTextField value1, value2, sum;\n" +
+          "    JLabel plus, equals;//  w w w  .  j  a  va 2 s  .  c o  m\n" +
+          "\n" +
+          "    public Main() {\n" +
+          "        super(\"Add Two Numbers\");\n" +
+          "        setSize(350, 90);\n" +
+          "        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n" +
+          "\n" +
+          "        FlowLayout flow = new FlowLayout(FlowLayout.CENTER);\n" +
+          "        setLayout(flow);\n" +
+          "\n" +
+          "        value1 = new JTextField(\"0\", 5);\n" +
+          "        plus = new JLabel(\"+\");\n" +
+          "        value2 = new JTextField(\"0\", 5);\n" +
+          "        equals = new JLabel(\"=\");\n" +
+          "        sum = new JTextField(\"0\", 5);\n" +
+          "        // add listeners\n" +
+          "        value1.addFocusListener(this);\n" +
+          "        value2.addFocusListener(this);\n" +
+          "        // set up sum field\n" +
+          "        sum.setEditable(false);\n" +
+          "        // add components\n" +
+          "        add(value1);\n" +
+          "        add(plus);\n" +
+          "        add(value2);\n" +
+          "        add(equals);\n" +
+          "        add(sum);\n" +
+          "        setVisible(true);\n" +
+          "    }\n" +
+          "\n" +
+          "    public void focusGained(FocusEvent event) {\n" +
+          "        try {\n" +
+          "            float total = Float.parseFloat(value1.getText())\n" +
+          "                    + Float.parseFloat(value2.getText());\n" +
+          "            sum.setText(\"\" + total);\n" +
+          "        } catch (NumberFormatException nfe) {\n" +
+          "            value1.setText(\"0\");\n" +
+          "            value2.setText(\"0\");\n" +
+          "            sum.setText(\"0\");\n" +
+          "        }\n" +
+          "    }\n" +
+          "\n" +
+          "    public void focusLost(FocusEvent event) {\n" +
+          "        focusGained(event);\n" +
+          "    }\n" +
+          "\n" +
+          "    public static void main(String[] arguments) {\n" +
+          "        Main frame = new Main();\n" +
+          "    }\n" +
+          "}\n";
+  navigator.clipboard.writeText(txt);
+</script>
+</body>
+</html>

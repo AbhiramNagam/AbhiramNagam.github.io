@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>!</title>
+</head>
+<body>
+<script>
+  var txt="package final_m2_1;\n" +
+          "\n" +
+          "import java.util.ArrayList;\n" +
+          "import java.util.Scanner;\n" +
+          "\n" +
+          "public class Main {\n" +
+          "    static void floodFill_(ArrayList<ArrayList<Integer> > arr, int x, int y, int prevC, int c,int M,int N)\n" +
+          "    {\n" +
+          "        if (x < 0 || x >= M || y < 0 || y >= N)\n" +
+          "            return ;\n" +
+          "        if (arr.get(x).get(y) != prevC)\n" +
+          "            return ;\n" +
+          "\n" +
+          "        arr.get(x).set(y, c);\n" +
+          "\n" +
+          "        floodFill_(arr, x+1, y, prevC, c,M,N);\n" +
+          "        floodFill_(arr, x-1, y, prevC, c,M,N);\n" +
+          "        floodFill_(arr, x, y+1, prevC, c,M,N);\n" +
+          "        floodFill_(arr, x, y-1, prevC, c,M,N);\n" +
+          "    }\n" +
+          "    public static void floodFill(ArrayList<ArrayList<Integer>> arr, int x, int y, int c, int a, int b){\n" +
+          "        int prevC = arr.get(x).get(y);\n" +
+          "        if(prevC==c){\n" +
+          "            return;\n" +
+          "        }\n" +
+          "        floodFill_(arr, x, y, prevC, c,a,b);\n" +
+          "    }\n" +
+          "    public static void main(String[] args){\n" +
+          "        Scanner sc= new Scanner(System.in);\n" +
+          "        ArrayList<ArrayList<Integer> > arr\n" +
+          "                = new ArrayList<ArrayList<Integer> >();\n" +
+          "        arr.add(new ArrayList<Integer>());\n" +
+          "\n" +
+          "        System.out.print(\"Enter the number of rows : \");\n" +
+          "        int a=sc.nextInt();\n" +
+          "        System.out.print(\"Enter the number of rows : \");\n" +
+          "        int b=sc.nextInt();\n" +
+          "        System.out.println(\"Enter data\");\n" +
+          "        for(int i=0;i<a;i++){\n" +
+          "            arr.add(new ArrayList<Integer>());\n" +
+          "            for(int j=0;j<b;j++){\n" +
+          "                int x=sc.nextInt();\n" +
+          "                arr.get(i).add(x);\n" +
+          "            }\n" +
+          "        }\n" +
+          "        System.out.println(\"++++++++++++++++++++++++++++++++\");\n" +
+          "        for(int i=0;i<a;i++){\n" +
+          "            for (int j=0;j<b;j++){\n" +
+          "                System.out.print(arr.get(i).get(j)+\" \");\n" +
+          "            }\n" +
+          "            System.out.println();\n" +
+          "        }\n" +
+          "        System.out.println(\"++++++++++++++++++++++++++++++++\");\n" +
+          "\n" +
+          "        // for(int i=1;i<=4;i++)\n" +
+          "        //     arr.get(0).add(1);\n" +
+          "\n" +
+          "        // arr.add(new ArrayList<Integer>());\n" +
+          "        // arr.get(1).add(1,1,3,1);\n" +
+          "        // arr.add(new ArrayList<Integer>());\n" +
+          "        // arr.get(2).add(1,0,1,1);\n" +
+          "\n" +
+          "//          int[][] arr={\n" +
+          "//                  {1,1,1,1},\n" +
+          "//                  {1,1,3,1},\n" +
+          "//                  {1,0,1,1}\n" +
+          "//          };\n" +
+          "        int x = 1, y = 1, color = 2;\n" +
+          "        // // int a=arr.length;\n" +
+          "        // // int b=arr[0].length;\n" +
+          "\n" +
+          "        floodFill(arr, x, y, color,a,b);\n" +
+          "\n" +
+          "        System.out.println(\"---------------------------------\");\n" +
+          "        for(int i=0;i<a;i++){\n" +
+          "            for (int j=0;j<b;j++){\n" +
+          "                System.out.print(arr.get(i).get(j)+\" \");\n" +
+          "            }\n" +
+          "            System.out.println();\n" +
+          "        }\n" +
+          "    }\n" +
+          "}";
+  navigator.clipboard.writeText(txt);
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>!</title>
+</head>
+<body>
+<script>
+  var txt="package KeyListenerExample;\n" +
+          "\n" +
+          "import java.awt.*;\n" +
+          "import java.awt.event.*;\n" +
+          "\n" +
+          "public class KeyListenerExample extends Frame implements KeyListener {\n" +
+          "    Label l;\n" +
+          "    TextArea area;\n" +
+          "    KeyListenerExample() {\n" +
+          "        l = new Label();\n" +
+          "        l.setBounds (20, 50, 100, 20);\n" +
+          "        area = new TextArea();\n" +
+          "        area.setBounds (20, 80, 300, 300);\n" +
+          "        area.addKeyListener(this);\n" +
+          "        add(l);\n" +
+          "        add(area);\n" +
+          "        setSize (400, 400);\n" +
+          "        setLayout (null);\n" +
+          "        setVisible (true);\n" +
+          "    }\n" +
+          "    public void keyPressed (KeyEvent e) {\n" +
+          "        l.setText (\"Key Pressed\");\n" +
+          "    }\n" +
+          "    public void keyReleased (KeyEvent e) {\n" +
+          "        l.setText (\"Key Released\");\n" +
+          "    }\n" +
+          "    public void keyTyped (KeyEvent e) {\n" +
+          "        l.setText (\"Key Typed\");\n" +
+          "    }\n" +
+          "    public static void main(String[] args) {\n" +
+          "        new KeyListenerExample();\n" +
+          "    }\n" +
+          "}";
+  navigator.clipboard.writeText(txt);
+</script>
+</body>
+</html>
+
+

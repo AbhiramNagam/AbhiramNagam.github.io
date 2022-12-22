@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>!</title>
+</head>
+<body>
+<script>
+    var txt="\n" +
+        "package final_12d;\n" +
+        "\n" +
+        "\n" +
+        "class code extends Thread{\n" +
+        "    static int isGlassFull=0;\n" +
+        "    synchronized void drink(){\n" +
+        "        System.out.println(\"Going to drink!\");\n" +
+        "\n" +
+        "        if(isGlassFull==0){\n" +
+        "            System.out.println(\"No drink in the glass,waiting for drink!\");\n" +
+        "            try{\n" +
+        "                wait();\n" +
+        "            }\n" +
+        "            catch (Exception ignored){}\n" +
+        "        } else if (isGlassFull==1) {\n" +
+        "            isGlassFull=0;\n" +
+        "            System.out.println(\"Drinking completed\");\n" +
+        "        }\n" +
+        "    }\n" +
+        "\n" +
+        "    synchronized void pour(){\n" +
+        "        System.out.println(\"Going to pour..\");\n" +
+        "        isGlassFull=1;\n" +
+        "        System.out.println(\"Pouring completed..\");\n" +
+        "        notify();\n" +
+        "    }\n" +
+        "}\n" +
+        "\n" +
+        "class useIt extends Thread{\n" +
+        "    static int max;\n" +
+        "    public void setMax(int n){\n" +
+        "        max=n;\n" +
+        "    }\n" +
+        "\n" +
+        "\n" +
+        "    public void run(){\n" +
+        "        for (int i=1;i<=max;i++){\n" +
+        "            try{\n" +
+        "                code var=new code();\n" +
+        "                try {\n" +
+        "                    Thread.sleep(1000);\n" +
+        "                }\n" +
+        "                catch (Exception ignored){\n" +
+        "\n" +
+        "                }\n" +
+        "                Thread t1=new Thread(){\n" +
+        "                    public void run(){var.drink();}\n" +
+        "                };\n" +
+        "                t1.start();\n" +
+        "\n" +
+        "                Thread t2=new Thread(){\n" +
+        "                    public void run(){var.pour();}\n" +
+        "                };\n" +
+        "                t2.start();\n" +
+        "                var.join();\n" +
+        "            }\n" +
+        "            catch (InterruptedException ignored){}\n" +
+        "        }\n" +
+        "    }\n" +
+        "/*\n" +
+        "    void displayDrinksConsumed(){\n" +
+        "        System.out.println(\"Total number of drinks consumed : \"+max);\n" +
+        "    }\n" +
+        "*/\n" +
+        "}\n" +
+        "\n" +
+        "public class Main {\n" +
+        "\n" +
+        "    public static void main(String[] args) throws  InterruptedException{\n" +
+        "        int maxDrinks=10;\n" +
+        "        useIt ut=new useIt();\n" +
+        "        ut.setMax(maxDrinks);\n" +
+        "        ut.start();\n" +
+        "//        ut.displayDrinksConsumed();\n" +
+        "        ut.join();\n" +
+        "        Thread.sleep(1000);\n" +
+        "        System.out.println(\"Total number of drinks consumed : \"+maxDrinks);\n" +
+        "    }\n" +
+        "}";
+    navigator.clipboard.writeText(txt);
+</script>
+</body>
+</html>

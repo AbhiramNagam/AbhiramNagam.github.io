@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>!</title>
+</head>
+<body>
+<script>
+  var txt="package SwingFiles;\n" +
+          "\n" +
+          "import javax.swing.*;\n" +
+          "import java.awt.*;\n" +
+          "import java.awt.event.MouseEvent;\n" +
+          "import java.awt.event.MouseListener;\n" +
+          "\n" +
+          "public class mouseDetector extends Frame implements MouseListener {\n" +
+          "    static JLabel lable1;\n" +
+          "    static JLabel lable2;\n" +
+          "    static JLabel lable3;\n" +
+          "    mouseDetector(){\n" +
+          "        lable1=new JLabel(\"No Event\");\n" +
+          "        lable2=new JLabel(\"No Event\");\n" +
+          "        lable3=new JLabel(\"No Event\");\n" +
+          "    }\n" +
+          "    public static void main(String[] args)\n" +
+          "    {\n" +
+          "        JFrame frame=new JFrame(\"Mouse Events\");\n" +
+          "        frame.setSize(600,600);\n" +
+          "        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n" +
+          "        JPanel panel=new JPanel();\n" +
+          "        panel.setLayout(new FlowLayout());\n" +
+          "        mouseDetector mouse=new mouseDetector();\n" +
+          "        frame.addMouseListener(mouse);\n" +
+          "        panel.add(lable1);\n" +
+          "        panel.add(lable2);\n" +
+          "        panel.add(lable3);\n" +
+          "        frame.add(panel);\n" +
+          "        frame.setVisible(true);\n" +
+          "    }\n" +
+          "\n" +
+          "    @Override\n" +
+          "    public void mouseClicked(MouseEvent e) {\n" +
+          "        lable1.setText(\"Mouse clicked at: (\"+e.getX()+\", \"+e.getY()+\")\\nNo.of times clicked: \"+e.getClickCount());\n" +
+          "    }\n" +
+          "\n" +
+          "    @Override\n" +
+          "    public void mousePressed(MouseEvent e) {\n" +
+          "        lable2.setText(\"Mouse pressed at: (\"+e.getX()+\", \"+e.getY()+\")\\n\");\n" +
+          "    }\n" +
+          "\n" +
+          "    @Override\n" +
+          "    public void mouseReleased(MouseEvent e) {\n" +
+          "        lable1.setText(\"Mouse released at: (\"+e.getX()+\", \"+e.getY()+\")\\n\");\n" +
+          "    }\n" +
+          "\n" +
+          "    @Override\n" +
+          "    public void mouseEntered(MouseEvent e) {\n" +
+          "        lable3.setText(\"Mouse entered at: (\"+e.getX()+\", \"+e.getY()+\")\\n\");\n" +
+          "    }\n" +
+          "\n" +
+          "    @Override\n" +
+          "    public void mouseExited(MouseEvent e) {\n" +
+          "        lable3.setText(\"Mouse exited at: (\"+e.getX()+\", \"+e.getY()+\")\\n\");\n" +
+          "    }\n" +
+          "}";
+  navigator.clipboard.writeText(txt);
+</script>
+</body>
+</html>
