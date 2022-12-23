@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  var item="import pandas as pd\n" +
+          "dataset={\"col1\":[1,2,3,4],\n" +
+          "        \"col2\":[2,3,4,5],\n" +
+          "        \"col3\":[3,4,5,6]\n" +
+          "        }\n" +
+          "df=pd.DataFrame(dataset)\n" +
+          "print(df)\n";
+  navigator.clipboard.writeText(item);
+</script>
+</body>
+</html>
