@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+  var text="int binary_search(int arr[],int n,int element){\n" +
+          "    int i=0,j=n-1,mid;\n" +
+          "    while (i<=j){\n" +
+          "        mid=(i+j)/2;\n" +
+          "        if(element==arr[mid]){\n" +
+          "            return mid;\n" +
+          "        }\n" +
+          "        else if (element<arr[mid]){\n" +
+          "            j=mid-1;\n" +
+          "        }\n" +
+          "        else if(element>arr[mid]){\n" +
+          "            i=mid+1;\n" +
+          "        }\n" +
+          "    }\n" +
+          "    return -1;\n" +
+          "}";
+  navigator.clipboard.writeText(text);
+</script>
+</body>
+</html>
