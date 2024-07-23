@@ -436,7 +436,7 @@ Module 10:
 		
 Final Assessment:
 	Which service builds the workflows that are required for human review of machine learning predictions?
-		Ans: Amazon Augmented AI
+		Ans: Amazon Augmented AI.
 
 	Automate the deployment of workloads into an AWS environment - This action can be performed with AWS Quick Starts.
 	
